@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<h1>New User</h1>
+<form
+        data-th-object="${newuser}"
+        method="post"
+        data-th-action="@{/registration}"
+        action="/registration"
+>
+    <label for="firstname">FirstName</label>
+    <input id="firstname" type="text" data-th-field="*{firstName}">
+    <p
+            style="color: red;"
+            data-th-if="${#fields.hasErrors('firstName')}"
+            data-th-errors="*{firstName}"
+    ></p>
+
+    <label for="lastname">LastName</label>
+    <input id="lastname" type="text" data-th-field="*{lastName}">
+    <p
+            style="color: red;"
+            data-th-if="${#fields.hasErrors('lastName')}"
+            data-th-errors="*{lastName}"
+    ></p>
+
+    <label for="email">Email</label>
+    <input id="email" type="email" data-th-field="*{email}">
+    <p
+            style="color: red;"
+            data-th-if="${#fields.hasErrors('email')}"
+            data-th-errors="*{email}"
+    ></p>
+
+    <label for="password">Password</label>
+    <input id="password" type="password" data-th-field="*{password}">
+    <p
+            style="color: red;"
+            data-th-if="${#fields.hasErrors('password')}"
+            data-th-errors="*{password}"
+    ></p>
+
+    <input type="submit" value="Save">
+</form>
+<a href="/home"><BUTTON>Home</BUTTON></a>
+</body>
+</html>

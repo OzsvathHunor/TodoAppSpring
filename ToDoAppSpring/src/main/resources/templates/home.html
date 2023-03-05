@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<div>
+<a href="/registration"><button>Regisztracio</button></a>
+<a href="/todos"><button>ToDo Lista</button></a>
+<a href="/todo"><button>ToDo letrehozasa</button></a>
+</div>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+</body>
+</html>
